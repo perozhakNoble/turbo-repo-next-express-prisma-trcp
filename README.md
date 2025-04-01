@@ -1,84 +1,61 @@
-# Turborepo starter
+# Pool Pet
 
-This Turborepo starter is maintained by the Turborepo core team.
+A modern web application for managing and tracking pet-related activities and services.
 
-## Using this example
+## Project Structure
 
-Run the following command:
+This is a monorepo using Turborepo with the following structure:
 
-```sh
-npx create-turbo@latest
+### Apps
+
+- `web`: Next.js frontend application
+- `api`: Backend API service
+
+### Packages
+
+- `db`: Database package with shared database configurations and utilities
+- `ui`: Shared React component library
+- `eslint-config`: Shared ESLint configurations
+- `typescript-config`: Shared TypeScript configurations
+
+## Prerequisites
+
+- Node.js >= 18 (20.19.0 Recommended)
+- npm >= 10.8.2
+
+## Getting Started
+
+1. Install dependencies:
+
+```bash
+npm install
 ```
 
-## What's inside?
+2. Start the development server:
 
-This Turborepo includes the following packages/apps:
+```bash
+npm run dev
+```
 
-### Apps and Packages
+This will start both the frontend and backend applications in development mode.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+## Available Scripts
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- `npm run dev`: Start all applications in development mode
+- `npm run build`: Build all applications and packages
+- `npm run lint`: Run ESLint across all packages and applications
+- `npm run format`: Format code using Prettier
+- `npm run check-types`: Run TypeScript type checking across all packages
 
-### Utilities
+## Development
 
-This Turborepo has some additional tools already setup for you:
+The project uses:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [Turborepo](https://turbo.build/repo) for build system and task running
+- [TypeScript](https://www.typescriptlang.org/) for type safety
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
-### Build
+## License
 
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+[Add your license information here]
