@@ -1,6 +1,6 @@
 # Pool Pet
 
-A modern web application for managing and tracking pet-related activities and services.
+Pet Project
 
 ## Project Structure
 
