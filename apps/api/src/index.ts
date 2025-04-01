@@ -1,30 +1,41 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { prisma } from "@repo/db";
+import * as trpcExpress from "@trpc/server/adapters/express";
+import { appRouter } from "./router";
 
 dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Legacy REST endpoints
-app.get("/status", (_: Request<{}, any, any>, res: Response) => {
-  res.send("API running");
-});
+// tRPC middleware
+app.use(
+  "/trpc",
+  trpcExpress.createExpressMiddleware({
+    router: appRouter,
+  })
+);
 
-app.get("/users", async (_, res) => {
-  const users = await prisma.user.findMany();
-  res.json(users);
-});
+app.use("/panel", (async (_: Request, res: Response) => {
+  if (process.env.SWAGGER_UI_ENABLED !== "true") {
+    return res.status(404).send("Not Found");
+  }
 
-app.post("/users", async (req, res) => {
-  const { name, email } = req.body;
-  const newUser = await prisma.user.create({
-    data: { name, email },
-  });
-  res.json(newUser);
-});
+  // Dynamically import renderTrpcPanel only in development
+  const { renderTrpcPanel } = await import("trpc-ui");
+
+  return res.send(
+    renderTrpcPanel(appRouter, {
+      url: `http://localhost:${port}/trpc`,
+      meta: {
+        title: "Pool Pet API",
+      },
+    })
+  );
+}) as any);
 
 const port = process.env.PORT || 3001;
-app.listen(port, () => console.log(`API listening on port ${port}`));
+app.listen(port, () => {
+  console.log(`API listening on port ${port}`);
+});

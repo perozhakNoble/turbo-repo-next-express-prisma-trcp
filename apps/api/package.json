@@ -23,8 +23,11 @@
   },
   "dependencies": {
     "@repo/db": "*",
+    "@trpc/server": "^11.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "trpc-ui": "^1.0.15",
+    "zod": "^3.24.2"
   }
 }
