@@ -53,6 +53,12 @@ The project uses:
 
 - [Turborepo](https://turbo.build/repo) for build system and task running
 - [TypeScript](https://www.typescriptlang.org/) for type safety
+- [tRPC](https://trpc.io) for end-to-end typesafe APIs
+- [Zod](https://zod.dev) for runtime type validation
+- [React Hook Form](https://react-hook-form.com) for form handling
+- [shadcn/ui](https://ui.shadcn.com) for UI components
+- [Express](https://expressjs.com) for backend server
+- [Prisma](https://prisma.io) for database ORM
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
