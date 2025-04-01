@@ -14,7 +14,7 @@ This is a monorepo using Turborepo with the following structure:
 ### Packages
 
 - `db`: Database package with shared database configurations and utilities
-- `ui`: Shared React component library
+- `ui`: Shared React component library (Was in template, I think can be removed)
 - `eslint-config`: Shared ESLint configurations
 - `typescript-config`: Shared TypeScript configurations
 
