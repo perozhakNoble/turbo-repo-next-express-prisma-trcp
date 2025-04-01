@@ -1,0 +1,21 @@
+{
+  "name": "@repo/db",
+  "main": "src/client.ts",
+  "types": "src/client.ts",
+  
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    ".": {
+      "import": "./src/client.ts",
+      "require": "./src/client.ts"
+    }
+  },
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "prisma": "^6.5.0"
+  }
+}
